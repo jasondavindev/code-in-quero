@@ -29,7 +29,17 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "escolas": {
+      "type": "hasOne",
+      "model": "Escola",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

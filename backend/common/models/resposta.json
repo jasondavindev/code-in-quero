@@ -25,7 +25,17 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "parceiros": {
+      "type": "hasOne",
+      "model": "Parceiro",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

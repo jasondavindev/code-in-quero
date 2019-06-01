@@ -38,7 +38,17 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "cursos": {
+      "type": "hasMany",
+      "model": "Curso",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

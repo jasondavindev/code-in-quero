@@ -39,7 +39,17 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "ofertaEscolas": {
+      "type": "hasMany",
+      "model": "OfertaEscola",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }
