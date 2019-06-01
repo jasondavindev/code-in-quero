@@ -3,10 +3,10 @@
   "plural": "escolas",
   "base": "PersistedModel",
   "idInjection": true,
-  "forceId": true,
   "options": {
     "validateUpsert": true
   },
+  "forceId": true,
   "properties": {
     "id": {
       "type": "number",
