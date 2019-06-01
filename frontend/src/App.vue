@@ -3,18 +3,21 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <Tela1></Tela1>
     <Tela2></Tela2>
+    <Tela3></Tela3>
   </div>
 </template>
 
 <script>
 import Tela1 from './components/Tela1.vue'
 import Tela2 from './components/Tela2.vue'
+import Tela3 from './components/Tela3.vue'
 
 export default {
   name: 'app',
   components: {
     Tela1,
-    Tela2
+    Tela2,
+    Tela3
   }
 }
 </script>
