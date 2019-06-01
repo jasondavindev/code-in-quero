@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "tipo_curso": {
+    "range_idade": {
       "type": "string",
       "required": true
     },
