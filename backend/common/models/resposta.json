@@ -1,0 +1,31 @@
+{
+  "name": "Resposta",
+  "plural": "/repostas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": true,
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "pendente"
+    },
+    "observacoes": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Curso",
+  "plural": "cursos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "forceId": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "tipo_curso": {
+      "type": "string",
+      "required": true
+    },
+    "tipo": {
+      "type": "string",
+      "required": true
+    },
+    "nivel": {
+      "type": "string",
+      "required": true
+    },
+    "duracao": {
+      "type": "number",
+      "required": true
+    },
+    "lingua": {
+      "type": "string",
+      "required": true,
+      "default": "ingles"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

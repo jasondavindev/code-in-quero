@@ -1,1 +1,12 @@
-{}
+{
+  "Mysql": {
+    "host": "localhost",
+    "port": 5000,
+    "url": "mysql://root:teste@localhost:5000/application",
+    "database": "application",
+    "password": "teste",
+    "name": "Mysql",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

@@ -12,5 +12,29 @@
       "../common/mixins",
       "./mixins"
     ]
+  },
+  "Resposta": {
+    "dataSource": "Mysql",
+    "public": true
+  },
+  "Parceiro": {
+    "dataSource": "Mysql",
+    "public": true
+  },
+  "Escola": {
+    "dataSource": "Mysql",
+    "public": true
+  },
+  "Curso": {
+    "dataSource": "Mysql",
+    "public": true
+  },
+  "OfertaEscola": {
+    "dataSource": "Mysql",
+    "public": true
+  },
+  "Oferta": {
+    "dataSource": "Mysql",
+    "public": true
   }
 }

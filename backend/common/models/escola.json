@@ -1,0 +1,44 @@
+{
+  "name": "Escola",
+  "plural": "escolas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "forceId": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "cidade": {
+      "type": "string",
+      "required": true
+    },
+    "endereco": {
+      "type": "string",
+      "required": true
+    },
+    "numero_telefone": {
+      "type": "string",
+      "required": true
+    },
+    "preco_matricula": {
+      "type": "number",
+      "required": true
+    },
+    "desconto_matricula": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

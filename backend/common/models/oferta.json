@@ -1,0 +1,32 @@
+{
+  "name": "Oferta",
+  "plural": "ofertas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "forceId": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "desconto_mensalidade": {
+      "type": "number",
+      "required": true
+    },
+    "desconto_material": {
+      "type": "number",
+      "required": true
+    },
+    "vagas": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
