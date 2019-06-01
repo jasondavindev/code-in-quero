@@ -16,23 +16,10 @@
       "type": "number",
       "required": true
     },
-    "material_full": {
-      "type": "number",
-      "required": true
-    },
     "numero_parcelas": {
       "type": "number",
       "required": true,
       "default": 1
-    },
-    "tipo_pagamento": {
-      "type": "string",
-      "required": true,
-      "default": "mensal"
-    },
-    "forma_pagamento": {
-      "type": "string",
-      "required": true
     }
   },
   "validations": [],
