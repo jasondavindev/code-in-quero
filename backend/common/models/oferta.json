@@ -16,10 +16,6 @@
       "type": "number",
       "required": true
     },
-    "desconto_material": {
-      "type": "number",
-      "required": true
-    },
     "vagas": {
       "type": "number",
       "required": true
