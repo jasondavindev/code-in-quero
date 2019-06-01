@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Tela1></Tela1>
+    <Tela2></Tela2>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Tela1 from './components/Tela1.vue'
+import Tela2 from './components/Tela2.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Tela1,
+    Tela2
   }
 }
 </script>
