@@ -2,14 +2,15 @@
   <div id="tela-1">
 		<h2>Parceiro - Tela 1</h2>
     <div>
-      <input v-model="parceiro.nome" type="text" placeholder="Nome">
+      <b-form-input v-model="parceiro.nome" type="text" placeholder="Qual o seu nome?"></b-form-input>
     </div>
 		<div>
-      <input v-model="parceiro.email" type="text" placeholder="email">
+      <b-form-input v-model="parceiro.email" type="text" placeholder="Qual o seu e-mail?"></b-form-input>
     </div>
 		<div>
-      <input v-model="parceiro.telefone" type="text" placeholder="Numero telefone">
+      <b-form-input v-model="parceiro.telefone" type="text" placeholder="Qual o seu telefone?"></b-form-input>
     </div>
+
   </div>
 </template>
 
@@ -18,7 +19,9 @@ export default {
   name: 'Tela1',
   data() {
     return {
-      parceiro: {}
+      parceiro: {
+        nome:""
+      }
     };
 	},
 	methods: {
@@ -28,6 +31,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
