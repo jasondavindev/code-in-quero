@@ -12,17 +12,14 @@
       "type": "number",
       "required": true
     },
-    "nome": {
-      "type": "string",
-      "required": true
-    },
     "range_idade": {
       "type": "string",
       "required": true
     },
     "tipo": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "Presencial"
     },
     "nivel": {
       "type": "string",

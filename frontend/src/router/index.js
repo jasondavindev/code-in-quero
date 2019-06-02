@@ -45,6 +45,20 @@ export default new Router({
 			name: 'turma',
 			component: () => import('../components/Turma.vue'),
 		},
-		
+		{
+			path: '/turmas-pos-1',
+			name: 'turma-pos-1',
+			component: () => import('../components/TurmaPosPrimeiro.vue'),
+		},
+		{
+			path: '/turmas-pos-2',
+			name: 'turma-pos-2',
+			component: () => import('../components/TurmaPosOutros.vue'),
+		},
+		{
+			path: '/turmas-finaliza',
+			name: 'turma-finaliza',
+			component: () => import('../components/TurmaFinaliza.vue'),
+		},
 	],
 });

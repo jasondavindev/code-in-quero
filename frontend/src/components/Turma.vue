@@ -155,7 +155,6 @@ export default {
       desconto: 60,
       classDesconto: 'desconto-medio',
 
-      cursos: [],
       passos: ['range_idade', 'nivel', 'duracao', 'vagas', 'mensalidade']
     };
   },
@@ -204,7 +203,6 @@ export default {
     },
 
     adicionarCurso() {
-			console.log(this.$store._actions)
       this.$store.dispatch(
         ADD_CURSO,
         Object.assign(
@@ -223,7 +221,12 @@ export default {
       );
 
       this.resetarValores();
-      this.passo = 1;
+
+			if (this.$store.getters.cursos.length === 1) {
+				this.$router.push({ name: 'turma-pos-1' });
+			} else {
+				this.$router.push({ name: 'turma-pos-2' });
+			}
     }
   },
   watch: {
@@ -246,12 +249,6 @@ export default {
         .replace('.', ',');
     }
 	},
-	
-	mounted() {
-		if (this.$store.getters.cursos.length) {
-			this.cursos = this.$store.getters.cursos;
-		}
-	}
 };
 </script>
 

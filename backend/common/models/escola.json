@@ -30,11 +30,11 @@
     },
     "preco_matricula": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "desconto_matricula": {
       "type": "number",
-      "required": true
+      "required": false
     }
   },
   "validations": [],

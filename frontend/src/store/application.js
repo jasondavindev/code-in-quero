@@ -1,4 +1,5 @@
 import { SET_ESCOLA, SET_PARCEIRO } from './actions.type';
+import Storage from '../services/storage.service';
 
 const state = {
 	idParceiro: undefined,
@@ -13,8 +14,14 @@ const getters = {
 };
 
 const actions = {
-	[SET_PARCEIRO]: (context, id) => (state.idParceiro = id),
-	[SET_ESCOLA]: (context, id) => (state.idEscola = id),
+	[SET_PARCEIRO]: (context, id) => {
+		state.idParceiro = id;
+		Storage.save('parceiro', id);
+	},
+	[SET_ESCOLA]: (context, id) => {
+		state.idEscola = id;
+		Storage.save('escola', id);
+	},
 	addCurso(context, curso) {
 		state.cursos.push(curso);
 	},

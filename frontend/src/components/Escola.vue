@@ -11,7 +11,12 @@
     <div id="passo-1" v-if="passo === 1">
       <h1 class="form-label">Qual é o nome da sua escola de idiomas?</h1>
       <div class="campos input-field">
-        <input v-model="marca" type="text" placeholder="Digite o nome da sua escola" class="input-text">
+        <input
+          v-model="marca"
+          type="text"
+          placeholder="Digite o nome da sua escola"
+          class="input-text"
+        >
       </div>
     </div>
 
@@ -35,7 +40,11 @@
           v-bind:class="{invalido: telefoneInvalido}"
           @keyup="validaTelefone"
         >
-        <b-tooltip show target="input-telefone" title="DICA: Este é o telefone divulgado aos alunos"></b-tooltip>
+        <b-tooltip
+          show
+          target="input-telefone"
+          title="DICA: Este é o telefone divulgado aos alunos"
+        ></b-tooltip>
       </div>
     </div>
     <div class="buttons">
@@ -43,16 +52,15 @@
         <button @click="proximo" class="button-cta button-next">Próximo</button>
       </div>
     </div>
-    
   </div>
 </template>
 
 <script>
 import ApiService from '../services/api.service';
+import Storage from '../services/storage.service';
 import { SET_ESCOLA } from '../store/actions.type';
 
 export default {
-
   name: 'Escola',
   data() {
     return {
@@ -110,21 +118,24 @@ export default {
     async enviar() {
       if (this.telefoneInvalido) return;
 
+      const parceiroId =
+        this.$store.getters.parceiro || Storage.get('parceiro');
+
       try {
         const result = await ApiService.post('/escolas', {
           nome: this.marca,
           cidade: this.cidade,
           endereco: this.endereco,
           numero_telefone: this.telefone,
-          parceiroId: this.$store.getters.parceiro
+          parceiroId
         });
 
+        Storage.save('escola', result.data.id);
         this.$store.dispatch(SET_ESCOLA, result.data.id);
       } catch (error) {}
     }
   }
 };
-
 </script>
 
 <style lang="css" scoped>
