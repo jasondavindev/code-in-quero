@@ -45,5 +45,6 @@ export default new Router({
 			name: 'turma',
 			component: () => import('../components/Turma.vue'),
 		},
+		
 	],
 });
