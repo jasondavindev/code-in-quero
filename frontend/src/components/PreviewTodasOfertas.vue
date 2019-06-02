@@ -1,5 +1,10 @@
 <template>
-  <div id="preview-cursos">
+  <div id="preview-cursos" class="container">
+    <div id="header">
+      <div id="breadcrumb">
+        <p>/todas as turmas</p>
+      </div>
+    </div>
     <div class="cursos" v-for="curso in cursos">
       <CardPreview
         :nivel="curso.nivel"
@@ -9,6 +14,9 @@
         :nome="curso.range_idade"
 				idioma="Inglês"
       ></CardPreview>
+    </div>
+    <div class="buttons">
+      <button class="button-cta">Falar com meu Key Account</button>
     </div>
   </div>
 </template>

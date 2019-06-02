@@ -724,3 +724,28 @@ ul.the-arrow-container li {
     margin:20px 0 80px;
     text-align: left;
   }
+
+  /* Preview Todas Ofertas */
+  #preview-cursos {
+    background:#f2f2f2;
+    margin:0;
+    width:100%;
+    min-height: 100vh;
+  }
+  
+  #preview-cursos #header {
+      margin-top:0px;
+      padding-top:20px;
+    }
+  
+    #preview-cursos #breadcrumb {
+      margin-top: 20px;
+      font-size:1.1em;
+      font-family:'WorkSans-Medium';
+      color: #7273FF;
+      text-align: left;
+    }
+
+    #preview-cursos .cursos {
+      margin-bottom: 30px !important;
+    }

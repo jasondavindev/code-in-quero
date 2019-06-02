@@ -38,7 +38,10 @@
           type="text"
           placeholder="(12) 9999-9999"
           v-bind:class="{invalido: telefoneInvalido}"
-          @keyup="validaTelefone"
+          @keyup="validaTelefondocument.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+});"
         >
         <b-tooltip
           show
@@ -59,7 +62,6 @@
 import ApiService from '../services/api.service';
 import Storage from '../services/storage.service';
 import { SET_ESCOLA } from '../store/actions.type';
-
 export default {
   name: 'Escola',
   data() {
