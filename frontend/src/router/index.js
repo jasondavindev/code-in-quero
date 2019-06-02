@@ -16,6 +16,11 @@ export default new Router({
 			component: () => import('../components/Escola'),
 		},
 		{
+			path: '/inicio',
+			name: 'inicio',
+			component: () => import('../components/Inicio.vue'),
+		},
+		{
 			path: '/turmas',
 			name: 'turmas',
 			component: () => import('../components/Tela3.vue'),

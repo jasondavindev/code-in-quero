@@ -11,7 +11,12 @@
 </template>
 <script>
 export default {
-  
+  created(){
+    setTimeout( () => this.$router.push({
+      path: '/inicio'
+    }), 2000);
+    
+  }
 }
 </script>
 <style lang="scss">
