@@ -407,3 +407,32 @@ ul.the-arrow-container li {
     width: 100%;
     text-align: center;
   }
+
+/* PARCEIRO */
+
+#parceiro {
+
+}
+
+  #parceiro #header {
+    margin-top:20px;
+  }
+
+  #parceiro #breadcrumb {
+    margin-top: 20px;
+    font-size:1.1em;
+    font-family:'WorkSans-Medium';
+    color: #7273FF;
+    text-align: left;
+  }
+
+  #parceiro #button-top {
+    height: 20px
+  }
+
+  #parceiro #footer {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+  }

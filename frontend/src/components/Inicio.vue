@@ -7,7 +7,7 @@
 
     <p>Aqui você cadastra e precifica seus cursos de forma simples, fácil e rápida.</p>
 
-    <router-link :to="{name: 'escola-pre'}" tag="button" class="button-cta">Vamos começar!</router-link>
+    <router-link :to="{name: 'parceiro-pre'}" tag="button" class="button-cta">Vamos começar!</router-link>
 
   </div>
 </template>

@@ -31,6 +31,11 @@ export default new Router({
 			component: () => import('../components/Turma.vue'),
 		},
 		{
+			path: '/parceiro-pre',
+			name: 'parceiro-pre',
+			component: () => import('../components/ParceiroPre.vue'),
+		},
+		{
 			path: '/parceiro',
 			name: 'parceiro',
 			component: () => import('../components/Parceiro.vue'),

@@ -1,12 +1,20 @@
 <template>
-  <div id="tela-parceiro">
+  <div id="parceiro" class="container">
+    <div id="header">
+      <div id="button-top" class="voltar">
+        <a @click="voltar" v-if="passo !== 1">← Voltar</a>
+      </div>
+      <div id="breadcrumb">
+        <p>/contato profissional</p>
+      </div>
+    </div>
     <div id="passo-1" v-if="passo === 1">
-      <h1>Qual é o seu e-mail de contato na escola?</h1>
+      <h1 class="form-label">Qual é o seu <br/> e-mail de contato na escola?</h1>
       <div class="campos">
         <input
           v-model="email"
           type="text"
-          placeholder="E-mail"
+          placeholder="Digite o seu melhor e-mail"
           v-bind:class="{invalido: emailInvalido}"
           @keyup="validaEmail"
         >
@@ -14,14 +22,14 @@
     </div>
 
     <div id="passo-2" v-if="passo === 2">
-      <h1>E o seu nome completo?</h1>
+      <h1 class="form-label">E o seu nome completo?</h1>
       <div class="campos">
         <input v-model="nome" type="text" placeholder="Nome">
       </div>
     </div>
 
     <div id="passo-3" v-if="passo === 3">
-      <h1>Para finalizar, qual é o seu telefone de contato?</h1>
+      <h1 class="form-label">Para finalizar, qual é o seu telefone de contato?</h1>
       <div class="campos">
         <input
           v-model="telefone"
@@ -35,10 +43,7 @@
 
     <div class="buttons">
       <div class="proximo">
-        <button @click="proximo">Próximo</button>
-      </div>
-      <div class="voltar">
-        <button @click="voltar">Voltar</button>
+        <button @click="proximo" class="button-cta button-next">Próximo</button>
       </div>
     </div>
   </div>
@@ -119,7 +124,7 @@ export default {
         });
 
         this.$store.dispatch(SET_PARCEIRO, result.data.id);
-        this.$router.push({ name: 'escola' });
+        this.$router.push({ name: 'escola-pre' });
       } catch (error) {}
     }
   }
