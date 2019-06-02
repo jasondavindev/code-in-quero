@@ -96,12 +96,28 @@ export default {
     };
   },
   methods: {
+    validarPasso() {
+      switch (this.passo) {
+        case 1:
+          return !!this.curso.nivel;
+        case 2:
+          return !!this.curso.range_idade;
+        case 3:
+          return !!this.curso.duracao && !!this.curso.numero_parcelas;
+        case 4:
+          this.cadastrarCursos();
+          return true;
+      }
+    },
+
     proximo() {
-      ++this.passo;
+      this.validarPasso() && ++this.passo;
+      this.mensagemErro = '';
     },
 
     voltar() {
       --this.passo;
+      this.mensagemErro = '';
     },
 
     resetarCurso() {
@@ -136,6 +152,7 @@ export default {
       if (this.validarCurso()) {
         this.cursos.push(Object.assign({}, this.curso));
         this.resetarCurso();
+        this.passo = 1;
       }
     },
 
@@ -153,6 +170,10 @@ export default {
       }
 
       return `${this.cursos.length} turmas`;
+    },
+
+    cadastrarCursos() {
+      console.log(this.cursos);
     }
   }
 };
