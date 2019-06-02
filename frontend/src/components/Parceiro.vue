@@ -1,28 +1,33 @@
 <template>
   <div id="tela-parceiro">
     <div id="passo-1" v-if="passo === 1">
-      <h1>Qual é a marca da sua instituição de ensino?</h1>
+      <h1>Qual é o seu e-mail de contato na escola?</h1>
       <div class="campos">
-        <input v-model="marca" type="text" placeholder="Nome">
+        <input
+          v-model="email"
+          type="text"
+          placeholder="E-mail"
+          v-bind:class="{invalido: emailInvalido}"
+          @keyup="validaEmail"
+        >
       </div>
     </div>
 
     <div id="passo-2" v-if="passo === 2">
-      <h1>Por favor, digite o endereço da sua escola</h1>
+      <h1>E o seu nome completo?</h1>
       <div class="campos">
-        <input v-model="cidade" type="text" placeholder="Cidade" @blur="validarCidade">
-        <input v-model="endereco" type="text" placeholder="Endereço">
+        <input v-model="nome" type="text" placeholder="Nome">
       </div>
     </div>
 
     <div id="passo-3" v-if="passo === 3">
-      <h1>Só falta agora o telefone da unidade</h1>
+      <h1>Para finalizar, qual é o seu telefone de contato?</h1>
       <div class="campos">
         <input
           v-model="telefone"
           type="text"
           placeholder="(12) 9999-9999"
-          v-bind:class="{invalido: !emailInvalido}"
+          v-bind:class="{invalido: telefoneInvalido}"
           @keyup="validaTelefone"
         >
       </div>
@@ -41,7 +46,7 @@
 
 <script>
 import ApiService from '../services/api.service';
-import { SET_ESCOLA } from '../store/actions.type';
+import { SET_ESCOLA, SET_PARCEIRO } from '../store/actions.type';
 
 export default {
   name: 'Escola',
@@ -50,14 +55,12 @@ export default {
       numero_passos: 3,
       passo: 1,
 
-      marca: '',
-      cidade: '',
-      endereco: '',
+      email: '',
+      nome: '',
       telefone: '',
 
-      emailInvalido: true,
-      cidadeInvalida: true,
-      enderecoInvalido: true
+      telefoneInvalido: true,
+      emailInvalido: true
     };
   },
 
@@ -78,38 +81,44 @@ export default {
       this.validaPasso(1) && ++this.passo;
     },
 
-    validarMarca() {},
-
-    validarCidade() {
-      ApiService.get('/parceiros');
+    emailValido() {
+      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi.test(this.email);
     },
 
-    validarEndereco() {},
-
-    validarTelefone() {
+    telefoneValido() {
       return /(^\d{2})(\d{4,5})(\d{4})$/gi.test(
         this.telefone.replace(/\D/g, '')
       );
     },
 
-    validaTelefone() {
-      if (this.validarTelefone()) {
-        this.emailInvalido = true;
-      } else {
+    validaEmail() {
+      if (this.emailValido()) {
         this.emailInvalido = false;
+      } else {
+        this.emailInvalido = true;
+      }
+    },
+
+    validaTelefone() {
+      if (this.telefoneValido()) {
+        this.telefoneInvalido = false;
+      } else {
+        this.telefoneInvalido = true;
       }
     },
 
     async enviar() {
+      if (this.emailInvalido || this.telefoneInvalido) return;
+
       try {
-        const result = await ApiService.post('/escolas', {
-          nome: this.marca,
-          cidade: this.cidade,
-          endereco: this.endereco,
-          numero_telefone: this.telefone
+        const result = await ApiService.post('/parceiros', {
+          nome: this.nome,
+          email: this.email,
+          telefone: this.telefone,
+          tipo_parceria: 'qbmais'
         });
 
-        this.$store.dispatch(SET_ESCOLA, result.data.id);
+        this.$store.dispatch(SET_PARCEIRO, result.data.id);
       } catch (error) {}
     }
   }

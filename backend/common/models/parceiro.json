@@ -26,6 +26,10 @@
     "tipo_parceria": {
       "type": "string",
       "required": true
+    },
+    "telefone": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],

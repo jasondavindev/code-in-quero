@@ -22,7 +22,7 @@
           v-model="telefone"
           type="text"
           placeholder="(12) 9999-9999"
-          v-bind:class="{invalido: !emailInvalido}"
+          v-bind:class="{invalido: telefoneInvalido}"
           @keyup="validaTelefone"
         >
       </div>
@@ -55,7 +55,7 @@ export default {
       endereco: '',
       telefone: '',
 
-      emailInvalido: true,
+      telefoneInvalido: true,
       cidadeInvalida: true,
       enderecoInvalido: true
     };
@@ -80,9 +80,7 @@ export default {
 
     validarMarca() {},
 
-    validarCidade() {
-      ApiService.get('/parceiros');
-    },
+    validarCidade() {},
 
     validarEndereco() {},
 
@@ -94,13 +92,15 @@ export default {
 
     validaTelefone() {
       if (this.validarTelefone()) {
-        this.emailInvalido = true;
+        this.telefoneInvalido = false;
       } else {
-        this.emailInvalido = false;
+        this.telefoneInvalido = true;
       }
     },
 
     async enviar() {
+      if (this.telefoneInvalido) return;
+
       try {
         const result = await ApiService.post('/escolas', {
           nome: this.marca,
