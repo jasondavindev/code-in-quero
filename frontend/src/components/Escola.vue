@@ -5,7 +5,7 @@
         <a @click="voltar" v-if="passo !== 1">← Voltar</a>
       </div>
       <div id="breadcrumb">
-        <p>/contato profissional</p>
+        <p>/sobre a escola</p>
       </div>
     </div>
     <div id="passo-1" v-if="passo === 1">
