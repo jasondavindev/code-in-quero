@@ -1,0 +1,64 @@
+{
+  "name": "MediaOfertas",
+  "plural": "/mediaofertas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "cidade": {
+      "type": "string",
+      "required": true
+    },
+    "range_idade": {
+      "type": "string",
+      "required": true
+    },
+    "nivel": {
+      "type": "string",
+      "required": true
+    },
+    "mensalidade_oferecida": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "calculo": {
+      "http": {
+        "path": "/calculo",
+        "method": "GET",
+        "status": 200
+      },
+      "accepts": [
+        {
+          "arg": "cidade",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "range_idade",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "nivel",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "returns": {
+        "root": true,
+        "type": "object"
+      }
+    }
+  }
+}

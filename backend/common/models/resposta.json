@@ -1,6 +1,6 @@
 {
   "name": "Resposta",
-  "plural": "/repostas",
+  "plural": "/respostas",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

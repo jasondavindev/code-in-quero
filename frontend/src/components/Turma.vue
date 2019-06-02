@@ -33,7 +33,7 @@
           >
           <label for="range-idade-teens">Teens</label>
         </div>
-        <div id="option3" class="option"  v-bind:class="ativos_Range[2]">
+        <div id="option3" class="option" v-bind:class="ativos_Range[2]">
           <input
             type="radio"
             name="range_idade"
@@ -92,48 +92,84 @@
         <div class="row">
           <div class="col s6">
             <div class="option" v-bind:class="ativos_Duracao[0]">
-              <input type="radio" name="duracao" v-model="duracao" value="3" id="duracao-3" @click="selectDuracao(0)">
+              <input
+                type="radio"
+                name="duracao"
+                v-model="duracao"
+                value="3"
+                id="duracao-3"
+                @click="selectDuracao(0)"
+              >
               <label for="duracao-3">3</label>
             </div>
           </div>
           <div class="col s6">
             <div class="option" v-bind:class="ativos_Duracao[1]">
-              <input type="radio" name="duracao" v-model="duracao" value="6" id="duracao-6" @click="selectDuracao(1)">
+              <input
+                type="radio"
+                name="duracao"
+                v-model="duracao"
+                value="6"
+                id="duracao-6"
+                @click="selectDuracao(1)"
+              >
               <b-tooltip show target="duracao-6" title="DICA: Alunos preferem módulos mais curtos"></b-tooltip>
-                <label for="duracao-6">6</label>
+              <label for="duracao-6">6</label>
             </div>
           </div>
         </div>
         <div class="row">
-        
           <div class="col s6">
             <div class="option" v-bind:class="ativos_Duracao[2]">
-              <input type="radio" name="duracao" v-model="duracao" value="12" id="duracao-12" @click="selectDuracao(2)">
+              <input
+                type="radio"
+                name="duracao"
+                v-model="duracao"
+                value="12"
+                id="duracao-12"
+                @click="selectDuracao(2)"
+              >
               <label for="duracao-12">12</label>
             </div>
           </div>
           <div class="col s6">
             <div class="option" v-bind:class="ativos_Duracao[3]">
-            
-              <input type="radio" name="duracao" v-model="duracao" value="24" id="duracao-24" @click="selectDuracao(3)">
+              <input
+                type="radio"
+                name="duracao"
+                v-model="duracao"
+                value="24"
+                id="duracao-24"
+                @click="selectDuracao(3)"
+              >
               <label for="duracao-24">24</label>
             </div>
           </div>
         </div>
         <div class="row">
-
           <div class="col s6">
             <div class="option" v-bind:class="ativos_Duracao[4]">
-              <input type="radio" name="duracao" v-model="duracao" value="30" id="duracao-30" @click="selectDuracao(4)">
+              <input
+                type="radio"
+                name="duracao"
+                v-model="duracao"
+                value="30"
+                id="duracao-30"
+                @click="selectDuracao(4)"
+              >
               <label for="duracao-30">30</label>
             </div>
-
           </div>
           <div class="col s6">
             <div class="option" v-bind:class="ativos_Duracao[5]">
-            
-
-              <input type="radio" name="duracao" v-model="duracao" value="36" id="duracao-36" @click="selectDuracao(5)">
+              <input
+                type="radio"
+                name="duracao"
+                v-model="duracao"
+                value="36"
+                id="duracao-36"
+                @click="selectDuracao(5)"
+              >
               <label for="duracao-36">36</label>
             </div>
           </div>
@@ -151,7 +187,12 @@
           </select>
         </div>
         <div class="input" v-if="tipo_vaga === 'limitada'">
-          <input type="text" name="vagas" v-model="vagas" placeholder="Insira a quantidade de vagas">
+          <input
+            type="text"
+            name="vagas"
+            v-model="vagas"
+            placeholder="Insira a quantidade de vagas"
+          >
         </div>
       </div>
     </div>
@@ -160,7 +201,12 @@
       <h1 class="form-label">Valor da mensalidade</h1>
       <div class="campos">
         <div class="field">
-          <input type="text" name="mensalidade" v-model="mensalidade" placeholder="Insira o valor em R$">
+          <input
+            type="text"
+            name="mensalidade"
+            v-model="mensalidade"
+            placeholder="Insira o valor em R$"
+          >
         </div>
       </div>
     </div>
@@ -187,13 +233,18 @@
       </div>
     </div>
     <div id="footer">
-      <button class="button-footer"><i class="material-icons left">search</i>Pré-visualizar turma</button>
+      <button class="button-footer">
+        <i class="material-icons left">search</i>Pré-visualizar turma
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import { ADD_CURSO } from '../store/actions.type.js';
+import ApiService from '../services/api.service';
+import Store from '../services/storage.service';
+
 export default {
   name: 'Turma',
   data() {
@@ -211,9 +262,13 @@ export default {
       classDesconto: 'desconto-medio',
       cursos: [],
       passos: ['range_idade', 'nivel', 'duracao', 'vagas', 'mensalidade'],
-      ativos_Range: ['','',''],
-      ativos_Nivel: ['','',''],
-      ativos_Duracao: ['','','','','','']
+      ativos_Range: ['', '', ''],
+      ativos_Nivel: ['', '', ''],
+      ativos_Duracao: ['', '', '', '', '', ''],
+
+      mediaPraca: 0,
+      alcancar: 20,
+      ideal: 80
     };
   },
 
@@ -222,11 +277,11 @@ export default {
       this.ativos_Range = this.ativos_Range.map(el => '');
       this.ativos_Range[index] = 'option-selected';
     },
-    selectNivel:function(index) {
+    selectNivel: function(index) {
       this.ativos_Nivel = this.ativos_Nivel.map(el => '');
       this.ativos_Nivel[index] = 'option-selected';
     },
-    selectDuracao:function(index) {
+    selectDuracao: function(index) {
       this.ativos_Duracao = this.ativos_Duracao.map(el => '');
       this.ativos_Duracao[index] = 'option-selected';
     },
@@ -300,6 +355,7 @@ export default {
       // }
     }
   },
+
   watch: {
     desconto(val) {
       if (this.desconto < 60) {

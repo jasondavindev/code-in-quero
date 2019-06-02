@@ -573,6 +573,14 @@ ul.the-arrow-container li {
     height: 20px
   }
 
+  #preview-cursos {
+    padding: 10px;
+  }
+
+  #preview-cursos .cursos {
+    margin-bottom: 15px;
+  }
+
   .card-preview {
     background:#FFF;
     border:solid 1px #999;

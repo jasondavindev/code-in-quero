@@ -31,6 +31,11 @@ export default {
       const escolaId = this.$store.getters.escola || Storage.get('parceiro');
 
       try {
+        const escola = await ApiService.get(`/escolas/${escolaId}`);
+        const {
+          data: { cidade }
+        } = escola;
+
         this.$store.getters.cursos.forEach(async curso => {
           const rsCurso = await ApiService.post('/cursos', {
             range_idade: curso.range_idade,
@@ -48,6 +53,14 @@ export default {
             desconto_mensalidade: curso.desconto,
             vagas: curso.vagas,
             ofertaEscolaId: rsOfertaEscola.data.id
+          });
+
+          ApiService.post('/mediaofertas', {
+            cidade,
+            range_idade: curso.range_idade,
+            nivel: curso.nivel,
+            mensalidade_oferecida:
+              curso.mensalidade - (curso.mensalidade * curso.desconto) / 100
           });
         });
       } catch (error) {}

@@ -29,7 +29,6 @@ export default {
 
   mounted() {
 		this.cursos = this.$store.getters.cursos;
-		console.log(this.cursos)
   }
 };
 </script>

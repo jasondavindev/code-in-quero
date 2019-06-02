@@ -36,5 +36,9 @@
   "Oferta": {
     "dataSource": "Mysql",
     "public": true
+  },
+  "MediaOfertas": {
+    "dataSource": "Mysql",
+    "public": true
   }
 }

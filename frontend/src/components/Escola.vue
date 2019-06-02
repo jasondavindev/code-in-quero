@@ -132,6 +132,7 @@ export default {
 
         Storage.save('escola', result.data.id);
         this.$store.dispatch(SET_ESCOLA, result.data.id);
+        this.$router.push({ name: 'turma-pre' })
       } catch (error) {}
     }
   }
