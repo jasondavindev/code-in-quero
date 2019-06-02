@@ -52,9 +52,19 @@
   font-weight: normal;
 }
 
+@font-face {
+  src: url(fonts/Geomanist-Black.ttf);
+  font-family: 'Geomanist-Black';
+  font-weight: normal;
+}
+
 body {
   font-family: 'WorkSans-Regular';
   font-size:1.2em;
+}
+
+.logo {
+  font-family:'Geomanist-Black';
 }
 
 h1 {
@@ -65,5 +75,38 @@ h1 {
 
 #app {
   text-align: center;
-  margin: 20px 0;
 }
+
+/* Splash Screen */
+
+#splash {
+  color: #ffffff;
+  background-color:#7273ff;
+  height: 100vh;
+  width: 100%;
+}
+
+#logo-container {
+  height: 100vh;
+  text-align:center;
+}
+
+  #logo-container .logo {
+    width: 100%;
+    display: block;
+  }
+
+#powered-by {
+  position: fixed;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+  #powered-by h2 {
+    font-family: 'WorkSans-Medium';
+    font-size: 0.8em;
+    text-align:center;
+    text-transform: uppercase;
+    display: block;
+  }

@@ -8,8 +8,8 @@ export default new Router({
 		{
 			path: '/',
 			name: 'home',
-			component: () => import('../components/Tela1.vue'),
-    },
+			component: () => import('../components/Splash.vue'),
+		},
     {
       path: '/escola',
       name: 'escola',
