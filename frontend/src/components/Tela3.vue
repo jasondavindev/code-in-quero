@@ -3,7 +3,7 @@
     <h2>Cadastro de Turmas - Tela 1</h2>
     <h3>Vamos agora cadastrar as suas turmas</h3>
 
-    <div id="bloco-niveis">
+    <div id="bloco-niveis" v-if="passo === 1">
       <div>
         <input type="radio" name="nivel" v-model="curso.nivel" value="basico" id="nivel-basico">
         <label for="nivel-basico">basico</label>
@@ -22,10 +22,9 @@
         <input type="radio" name="nivel" v-model="curso.nivel" value="avancado" id="nivel-avancado">
         <label for="nivel-avancado">avancado</label>
       </div>
-      <button>Proximo</button>
     </div>
 
-    <div div="bloco-range-idade">
+    <div div="bloco-range-idade" v-if="passo === 2">
       <div>
         <input
           type="radio"
@@ -56,10 +55,9 @@
         >
         <label for="range-idade-adults">adults</label>
       </div>
-      <button>Proximo</button>
     </div>
 
-    <div id="bloco-adicionais">
+    <div id="bloco-adicionais" v-if="passo === 3">
       <div>
         <input v-model="curso.duracao" type="text" placeholder="Duração do Módulo">
       </div>
@@ -75,10 +73,10 @@
         <h2>Erro</h2>
         <p>{{ this.mensagemErro }}</p>
       </div>
-      <b-button variant="danger">Button</b-button>
     </div>
+    <button v-if="passo > 1" @click="voltar">Voltar</button>
+    <button @click="proximo">Proximo</button>
   </div>
-  
 </template>
 
 <script>
@@ -86,6 +84,7 @@ export default {
   name: 'Tela3',
   data() {
     return {
+      passo: 1,
       cursos: [],
       curso: {
         nivel: '',
@@ -97,6 +96,14 @@ export default {
     };
   },
   methods: {
+    proximo() {
+      ++this.passo;
+    },
+
+    voltar() {
+      --this.passo;
+    },
+
     resetarCurso() {
       this.curso = {
         nivel: '',
