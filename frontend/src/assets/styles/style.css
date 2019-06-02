@@ -147,7 +147,14 @@ input[type=text]:not(.browser-default).input-text {
   border:none;
   padding: 20px;
   font-family: 'WorkSans-Medium';
+  text-decoration:none;
 }
+
+.button-cta:hover,
+.button-cta:active {
+  text-decoration:none !important;
+}
+
 
 .button-next {
   background-color: #ffffff !important;
@@ -536,6 +543,176 @@ ul.the-arrow-container li {
       font-family: 'WorkSans-Light';
     }
 
-    #__BV_tooltip_2__ {
+    div[role=tooltip] {
       top: -15px !important;
     }
+
+/* PREVIEW */
+
+#preview-oferta {
+  background:#f2f2f2;
+  margin:0;
+  width:100%;
+  height: 100vh;
+}
+
+#preview-oferta #header {
+    margin-top:0px;
+    padding-top:20px;
+  }
+
+  #preview-oferta #breadcrumb {
+    margin-top: 20px;
+    font-size:1.1em;
+    font-family:'WorkSans-Medium';
+    color: #7273FF;
+    text-align: left;
+  }
+
+  #preview-oferta #button-top {
+    height: 20px
+  }
+
+  .card-preview {
+    background:#FFF;
+    border:solid 1px #999;
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(173,173,173,1);
+    -moz-box-shadow: 2px 2px 6px 0px rgba(173,173,173,1);
+    box-shadow: 2px 2px 6px 0px rgba(173,173,173,1);
+    padding: 25px;
+  }
+
+    .card-logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto
+    }
+
+    .collection {
+      width: 100%;
+      border:none !important;
+      margin: 0 !important;
+      text-align: left;
+    }
+
+      .collection.with-header .collection-header {
+        border: none !important;
+        margin:0 !important;
+        padding:0 !important;
+      }
+
+      .collection .collection-item {
+        border: none !important;
+        padding-left: 0 !important;
+      }
+
+        .collection .material-icons {
+          float:left;
+          margin-right:10px;
+          color: #7273FF;
+        }
+
+  .card-preview .desconto {
+    text-align: left;
+  }
+
+    .desconto span,
+    .mensalidade span {
+      color: #22b573;
+      font-size:1.2em;
+      font-family: 'WorkSans-Medium';
+    }
+  
+  .card-preview .mensalidade {
+    text-align: right;
+  }
+
+  .card-preview .card-infos-title {
+    font-family: 'WorkSans-SemiBold';
+    text-transform: uppercase;
+    font-size:0.7em;
+    margin-bottom: 5px !important;
+  }
+
+    .button-fake {
+      background-color:#fbb03b;
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+      padding: 15px 0;
+      font-size:16px;
+      font-family:"WorkSans-Medium";
+      border-radius: 6px;
+    }
+  
+  .card-disclaimer {
+    margin-top: 20px;
+    font-family: 'WorkSans-Medium';
+  }
+
+    .button-grid {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .button-grid-back {
+      background-color: #FF8878;
+    }
+
+  #preview-oferta #footer {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+  }
+
+/* PÓS TURMA */
+#turma-pos {
+  color: #ffffff;
+  background-color:#7273ff;
+  height: 100vh;
+  width: 100%;
+}
+
+#turma-pos h1 {
+  padding-top: 80px;
+  padding-right:70px;
+}
+
+  #turma-pos p {
+    font-family: 'WorkSans-Medium';
+    display: block;
+    margin:20px 0 80px;
+  }
+
+  .button-cta-underline {
+    background:none;
+    border: solid 1px #ffffff !important;
+  }
+
+  .button-cta-white {
+    background: #FFF;
+    color: #7273FF !important;
+  }
+
+/* Last Take */
+
+#turma-finaliza {
+  color: #ffffff;
+  background-color:#7273ff;
+  height: 100vh;
+  width: 100%;
+}
+
+  #turma-finaliza h1 {
+    padding-top: 80px;
+    padding-right:70px;
+  }
+
+  #turma-finaliza p {
+    font-family: 'WorkSans-Medium';
+    display: block;
+    margin:20px 0 80px;
+    text-align: left;
+  }

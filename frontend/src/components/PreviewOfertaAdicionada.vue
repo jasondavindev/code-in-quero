@@ -1,8 +1,8 @@
 <template>
-  <div id="preview-oferta">
+  <div id="preview-oferta" class="container">
     <div id="header">
       <div id="breadcrumb">
-        <p>/contato profissional</p>
+        <p>/visualização da turma</p>
       </div>
     </div>
     <CardPreview
@@ -14,15 +14,19 @@
       :nome="range_idade"
     ></CardPreview>
 
-    <div class="texto">
-      <p>
-        Assim que seu curso será visualizado.
-        <b>As informações estão corretas?</b>
+    <div class="card-disclaimer">
+      <p>Assim que seu curso será visualizado.<br />
+        <strong>As informações estão corretas?</strong>
       </p>
+    </div>
 
-      <div class="buttons">
-        <button @click="voltar">Voltar</button>
-        <button @click="confirmar">Confirmar</button>
+    <div class="row">
+      <div class="col s6">
+        <button @click="voltar" class="button-cta button-grid button-grid-back">Voltar</button>
+      </div>
+
+      <div class="col s6">
+        <button @click="confirmar" class="button-cta button-grid">Confirmar</button>
       </div>
     </div>
   </div>

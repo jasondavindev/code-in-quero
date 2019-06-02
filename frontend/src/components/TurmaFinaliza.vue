@@ -3,13 +3,16 @@
     <h1>
       <span class="text-highlight">Enviamos</span> seu cadastro com sucesso!
     </h1>
+    <p>
+      Muito em breve, o nosso time de Customer Success entrará em contato contigo para formalizar a parceria. Fique de olho em seu e-mail!
+    </p>
     <ul class="the-arrow-container">
       <li></li>
     </ul>
     <div class="buttons">
       <div>
         <router-link :to="{ name: 'preview-geral' }">
-          <button>Visualizar cursos</button>
+          <button class="button-cta button-cta-underline">Visualizar cursos</button>
         </router-link>
       </div>
     </div>

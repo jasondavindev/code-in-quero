@@ -170,7 +170,7 @@
       <div class="campos">
         <div class="range">
           <input id="range-preco" type="range" name="desconto" v-model="desconto" min="20" max="100">
-          <b-tooltip show target="range-preco" title="Este é o desconto ideal para a sua região"></b-tooltip>
+          <b-tooltip show target="range-preco" id="tooltip-turma" title="Este é o desconto ideal para a sua região"></b-tooltip>
         </div>
         <span class="label-desconto" :class="classDesconto">{{ this.desconto }}%</span>
       </div>
