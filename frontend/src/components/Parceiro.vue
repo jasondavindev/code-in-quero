@@ -1,5 +1,5 @@
 <template>
-  <div id="tela-escola">
+  <div id="tela-parceiro">
     <div id="passo-1" v-if="passo === 1">
       <h1>Qual é a marca da sua instituição de ensino?</h1>
       <div class="campos">

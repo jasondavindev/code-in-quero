@@ -10,11 +10,11 @@ export default new Router({
 			name: 'home',
 			component: () => import('../components/Splash.vue'),
 		},
-    {
-      path: '/escola',
-      name: 'escola',
-      component: () => import('../components/Escola')
-    },
+		{
+			path: '/escola',
+			name: 'escola',
+			component: () => import('../components/Escola'),
+		},
 		{
 			path: '/turmas',
 			name: 'turmas',
