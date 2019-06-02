@@ -81,7 +81,7 @@ export default {
         this.enviou = true;
 
         const patch = await ApiService.patch(
-          `/escolas/${Storage.get('escola')}`,
+          `/parceiros/${Storage.get('parceiro')}`,
           {
             respostaId: parseInt(data.id)
           }
