@@ -749,3 +749,64 @@ ul.the-arrow-container li {
     #preview-cursos .cursos {
       margin-bottom: 30px !important;
     }
+
+    /* Detalhes da Oferta */
+    #detalhe-parcerias {
+      width: 100%;
+    }
+    
+    #detalhe-parcerias #header {
+        margin-top:0px;
+        padding-top:20px;
+      }
+    
+      #detalhe-parcerias #breadcrumb {
+        margin-top: 20px;
+        font-size:1.1em;
+        font-family:'WorkSans-Medium';
+        color: #7273FF;
+        text-align: left;
+      }
+
+      .detalhe-parcerias-conteudo h2 {
+        font-family: 'WorkSans-ExtraBold';
+        font-size: 1.2em;
+        text-align:left;
+      }
+
+      .detalhe-parcerias-conteudo p {
+        text-align: left;
+        font-size: 0.95em;
+      }
+
+      #detalhe-parcerias .buttons {
+        margin-top: 40px;
+        text-align: center;;
+      }
+
+      #detalhe-parcerias .buttons .button-cta {
+        width: 100%;
+      }
+      
+      #detalhe-parcerias .button-cta {
+        margin: 0 auto !important;
+      }
+
+      #mensagem-confirmacao {
+        background-color:#ff8878;
+        display: block;
+        margin: 0 -40px;
+        padding: 25px;
+        text-align: center;
+        display: block;
+      }
+
+      #isencoes {
+        margin-top: 40px;
+        color: #000;
+      }
+
+        #isencoes .campos span {
+          font-weight: bold;
+          color: #000;
+        }
