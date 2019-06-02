@@ -221,12 +221,12 @@ export default {
       );
 
       this.resetarValores();
-
-			if (this.$store.getters.cursos.length === 1) {
-				this.$router.push({ name: 'turma-pos-1' });
-			} else {
-				this.$router.push({ name: 'turma-pos-2' });
-			}
+      this.$router.push({ name: 'preview-unico' });
+      // if (this.$store.getters.cursos.length === 1) {
+      // 	this.$router.push({ name: 'turma-pos-1' });
+      // } else {
+      // 	this.$router.push({ name: 'turma-pos-2' });
+      // }
     }
   },
   watch: {
@@ -248,7 +248,23 @@ export default {
         .toString()
         .replace('.', ',');
     }
-	},
+  },
+
+  mounted() {
+    const cursos = this.$store.getters.cursos;
+
+    if (cursos.length) {
+      const curso = cursos[cursos.length - 1];
+      this.range_idade = curso.range_idade;
+      this.nivel = curso.nivel;
+      this.duracao = curso.duracao;
+      this.tipo_vaga = curso.tipo_vaga;
+      this.vagas = curso.vagas;
+      this.mensalidade = curso.mensalidade;
+      this.desconto = curso.desconto;
+      this.classDesconto = curso.classDesconto;
+    }
+  }
 };
 </script>
 

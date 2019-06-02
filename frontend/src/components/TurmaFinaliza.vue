@@ -1,5 +1,19 @@
 <template>
-  <div></div>
+  <div id="turma-finaliza" class="bkg-purple container">
+    <h1>
+      <span class="text-highlight">Enviamos</span> seu cadastro com sucesso!
+    </h1>
+    <ul class="the-arrow-container">
+      <li></li>
+    </ul>
+    <div class="buttons">
+      <div>
+        <router-link :to="{ name: 'preview-geral' }">
+          <button>Visualizar cursos</button>
+        </router-link>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -12,18 +26,16 @@ export default {
 
     async salvaCurso() {
       const escolaId = this.$store.getters.escola || Storage.get('parceiro');
-      // console.log(this.$store.getters.cursos)
 
       try {
         this.$store.getters.cursos.forEach(async curso => {
-          console.log(curso)
           const rsCurso = await ApiService.post('/cursos', {
             range_idade: curso.range_idade,
             nivel: curso.nivel,
             duracao: curso.duracao,
             escolaId
           });
-          
+
           const rsOfertaEscola = await ApiService.post('/ofertasescola', {
             mensalidade_full: curso.mensalidade,
             cursoId: rsCurso.data.id

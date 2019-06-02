@@ -60,5 +60,15 @@ export default new Router({
 			name: 'turma-finaliza',
 			component: () => import('../components/TurmaFinaliza.vue'),
 		},
+		{
+			path: '/preview-unico',
+			name: 'preview-unico',
+			component: () => import('../components/PreviewOfertaAdicionada.vue'),
+		},
+		{
+			path: '/preview-geral',
+			name: 'preview-geral',
+			component: () => import('../components/PreviewTodasOfertas.vue'),
+		},
 	],
 });
