@@ -119,6 +119,7 @@ export default {
         });
 
         this.$store.dispatch(SET_PARCEIRO, result.data.id);
+        this.$router.push({ name: 'escola' });
       } catch (error) {}
     }
   }

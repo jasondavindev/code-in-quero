@@ -106,7 +106,8 @@ export default {
           nome: this.marca,
           cidade: this.cidade,
           endereco: this.endereco,
-          numero_telefone: this.telefone
+          numero_telefone: this.telefone,
+          parceiroId: this.$store.getters.parceiro
         });
 
         this.$store.dispatch(SET_ESCOLA, result.data.id);
