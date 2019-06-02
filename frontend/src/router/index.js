@@ -11,6 +11,11 @@ export default new Router({
 			component: () => import('../components/Splash.vue'),
 		},
 		{
+			path: '/escola-pre',
+			name: 'escola-pre',
+			component: () => import('../components/EscolaPre'),
+		},
+		{
 			path: '/escola',
 			name: 'escola',
 			component: () => import('../components/Escola'),
