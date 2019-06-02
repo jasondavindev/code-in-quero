@@ -76,7 +76,7 @@ body {
 }
 
 .text-highlight {
-  border-bottom: solid 10px #FF8878;
+  border-bottom: solid 10px #ff88788a;
   height: 40px;
   display: inline-block;
 }
@@ -87,7 +87,7 @@ h1.form-label {
 
 #button-top {
   text-align: left;
-  color: #FF8878;
+  color: #ff88788a;
   background:none;
   font-size: 0.8em;
   text-transform: uppercase;
@@ -134,7 +134,7 @@ input[type=text]:not(.browser-default).input-text {
   }
 
   .option-selected {
-    background-color:#FF8878;
+    background-color:#ff88788a;
   }
 
 .button-cta {
@@ -665,7 +665,7 @@ ul.the-arrow-container li {
     }
 
     .button-grid-back {
-      background-color: #FF8878;
+      background-color: #ff88788a;
     }
 
   #preview-oferta #footer {
@@ -793,7 +793,7 @@ ul.the-arrow-container li {
       }
 
       #mensagem-confirmacao {
-        background-color:#ff8878;
+        background-color:#ff88788a;
         display: block;
         margin: 0 -40px;
         padding: 25px;

@@ -9,7 +9,10 @@
       </div>
     </div>
     <div id="passo-1" v-if="passo === 1">
-      <h1 class="form-label">Qual é o seu <br/> e-mail de contato na escola?</h1>
+      <h1 class="form-label">
+        Qual é o seu
+        <br>e-mail de contato na escola?
+      </h1>
       <div class="campos">
         <input
           v-model="email"
@@ -82,6 +85,12 @@ export default {
 
     proximo() {
       this.passo === 3 && this.enviar();
+
+      if (this.emailInvalido === true && this.passo === 1) return;
+
+      if (!this.nome && this.passo === 2) return;
+
+      if (this.telefoneInvalido && this.passo === 3) return;
 
       this.validaPasso(1) && ++this.passo;
     },

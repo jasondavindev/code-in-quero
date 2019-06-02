@@ -16,7 +16,7 @@
             type="radio"
             name="range_idade"
             v-model="range_idade"
-            value="kids"
+            value="Kids"
             id="range-idade-kids"
             @click="selectRange(0)"
           >
@@ -27,7 +27,7 @@
             type="radio"
             name="range_idade"
             v-model="range_idade"
-            value="teens"
+            value="Teens"
             id="range-idade-teens"
             @click="selectRange(1)"
           >
@@ -38,7 +38,7 @@
             type="radio"
             name="range_idade"
             v-model="range_idade"
-            value="adults"
+            value="Adults"
             id="range-idade-adults"
             @click="selectRange(2)"
           >
@@ -55,7 +55,7 @@
             type="radio"
             name="nivel"
             v-model="nivel"
-            value="basico"
+            value="Básico"
             id="nivel-basico"
             @click="selectNivel(0)"
           >
@@ -66,7 +66,7 @@
             type="radio"
             name="nivel"
             v-model="nivel"
-            value="intermediario"
+            value="Intermediário"
             id="nivel-intermediario"
             @click="selectNivel(1)"
           >
@@ -77,7 +77,7 @@
             type="radio"
             name="nivel"
             v-model="nivel"
-            value="avancado"
+            value="Avançado"
             id="nivel-avancado"
             @click="selectNivel(2)"
           >

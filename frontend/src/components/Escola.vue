@@ -37,11 +37,7 @@
           v-model="telefone"
           type="text"
           placeholder="(12) 9999-9999"
-          v-bind:class="{invalido: telefoneInvalido}"
-          @keyup="validaTelefondocument.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-});"
+          @keyup="validaTelefone"
         >
         <b-tooltip
           show
@@ -94,6 +90,9 @@ export default {
     proximo() {
       this.passo === 3 && this.enviar();
 
+      if (this.passo === 1 && !this.marca) return;
+      if (this.passo === 2 && (!this.cidade || !this.endereco)) return;
+
       this.validaPasso(1) && ++this.passo;
     },
 
@@ -134,7 +133,7 @@ export default {
 
         Storage.save('escola', result.data.id);
         this.$store.dispatch(SET_ESCOLA, result.data.id);
-        this.$router.push({ name: 'turma-pre' })
+        this.$router.push({ name: 'turma-pre' });
       } catch (error) {}
     }
   }
