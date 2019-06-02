@@ -521,3 +521,21 @@ ul.the-arrow-container li {
       border-radius: 45px;
       margin-bottom:10px;
     }
+
+    #turma #preco-desconto {
+      margin-top: 40px;
+    }
+    #turma #preco-desconto h2 {
+      font-size: 1.1em;
+      color: #b3b3b3;
+      margin:0;
+    }
+
+    #turma #preco-desconto p {
+      font-size: 3em;
+      font-family: 'WorkSans-Light';
+    }
+
+    #__BV_tooltip_2__ {
+      top: -15px !important;
+    }

@@ -166,17 +166,18 @@
     </div>
 
     <div id="passo-6" v-if="passo === 6">
-      <h1>Valor da mensalidade</h1>
+      <h1 class="form-label">Pra fechar, qual será o desconto oferecido?</h1>
       <div class="campos">
-        <div class="option">
-          <input type="range" name="desconto" v-model="desconto" min="20" max="100">
+        <div class="range">
+          <input id="range-preco" type="range" name="desconto" v-model="desconto" min="20" max="100">
+          <b-tooltip show target="range-preco" title="Este é o desconto ideal para a sua região"></b-tooltip>
         </div>
         <span class="label-desconto" :class="classDesconto">{{ this.desconto }}%</span>
       </div>
 
-      <div class="campos">
-        <span>Preço com desconto</span>
-        <h2>R$ {{ precoDesconto }}</h2>
+      <div id="preco-desconto" class="campos">
+        <h2>Preço com desconto</h2>
+        <p>R$ {{ precoDesconto }}</p>
       </div>
     </div>
 
