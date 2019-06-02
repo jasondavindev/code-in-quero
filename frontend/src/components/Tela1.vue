@@ -1,17 +1,18 @@
 <template>
-  <div id="tela-1">
-		<h2>Parceiro - Tela 1</h2>
-    <div>
-      <b-form-input v-model="parceiro.nome" type="text" placeholder="Qual o seu nome?"></b-form-input>
-    </div>
-		<div>
-      <b-form-input v-model="parceiro.email" type="text" placeholder="Qual o seu e-mail?"></b-form-input>
-    </div>
-		<div>
-      <b-form-input v-model="parceiro.telefone" type="text" placeholder="Qual o seu telefone?"></b-form-input>
-    </div>
-
-  </div>
+  <b-row id="tela-1">
+    <b-col>
+		  <h1>Dados da sua escola</h1>
+      <b-form-row>
+        <b-form-input v-model="parceiro.nome" type="text" placeholder="Qual o seu nome?"></b-form-input>
+      </b-form-row>
+      <b-form-row>
+        <b-form-input v-model="parceiro.email" type="text" placeholder="Qual o seu e-mail?"></b-form-input>
+      </b-form-row>
+		  <b-form-row>
+        <b-form-input v-model="parceiro.telefone" type="text" placeholder="Qual o seu telefone?"></b-form-input>
+		  </b-form-row>
+    </b-col>
+  </b-row>
 </template>
 
 <script>

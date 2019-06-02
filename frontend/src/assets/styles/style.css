@@ -1,0 +1,69 @@
+@font-face {
+  src: url(fonts/WorkSans-Black.ttf);
+  font-family: 'WorkSans-Black';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-Bold.ttf);
+  font-family: 'WorkSans-Bold';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-ExtraBold.ttf);
+  font-family: 'WorkSans-ExtraBold';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-ExtraLight.ttf);
+  font-family: 'WorkSans-ExtraLight';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-Light.ttf);
+  font-family: 'WorkSans-Light';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-Medium.ttf);
+  font-family: 'WorkSans-Medium';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-Regular.ttf);
+  font-family: 'WorkSans-Regular';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-SemiBold.ttf);
+  font-family: 'WorkSans-SemiBold';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url(fonts/WorkSans-Thin.ttf);
+  font-family: 'WorkSans-Thin';
+  font-weight: normal;
+}
+
+body {
+  font-family: 'WorkSans-Regular';
+  font-size:1.2em;
+}
+
+h1 {
+  font-family: 'WorkSans-Bold';
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#app {
+  text-align: center;
+  margin: 20px 0;
+}
