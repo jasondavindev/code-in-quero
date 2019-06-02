@@ -3,9 +3,7 @@
     <h1>
       <span class="text-highlight">Enviamos</span> seu cadastro com sucesso!
     </h1>
-    <p>
-      Muito em breve, o nosso time de Customer Success entrará em contato contigo para formalizar a parceria. Fique de olho em seu e-mail!
-    </p>
+    <p>Muito em breve, o nosso time de Customer Success entrará em contato contigo para formalizar a parceria. Fique de olho em seu e-mail!</p>
     <ul class="the-arrow-container">
       <li></li>
     </ul>
@@ -66,15 +64,6 @@ export default {
       } catch (error) {}
     }
   },
-
-  // range_idade: this.range_idade,
-  // nivel: this.nivel,
-  // duracao: this.duracao,
-  // tipo_vaga: this.tipo_vaga,
-  // vagas: this.vagas,
-  // mensalidade: this.mensalidade,
-  // desconto: this.desconto,
-  // classDesconto: this.classDesconto
 
   mounted() {
     this.salvaCurso();

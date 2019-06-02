@@ -10,7 +10,7 @@
 			<router-link :to="{ name: 'turma' }">
 				<button class="button-cta button-cta-underline">Cadastrar nova turma</button>
 			</router-link>
-			<router-link :to="{ name: 'turma-finaliza' }">
+			<router-link :to="{ name: 'detalhes-parceria' }">
 				<button class="button-cta button-cta-white">Finalizar e enviar</button>
 			</router-link>
 		</div>

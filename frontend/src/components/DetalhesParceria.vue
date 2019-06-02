@@ -32,7 +32,7 @@
           </div>
 
           <div class="buttons">
-            <button>Finalizar e enviar</button>
+            <button @click="enviar">Finalizar e enviar</button>
           </div>
         </div>
       </div>
@@ -69,6 +69,10 @@ export default {
       this.alterar = true;
     },
 
+    getTipoParceria() {
+      return this.isentarMensalidade ? 'qbmais' : 'qbsimples';
+    },
+
     async enviar() {
       if (this.enviou) return;
 
@@ -83,11 +87,12 @@ export default {
         const patch = await ApiService.patch(
           `/parceiros/${Storage.get('parceiro')}`,
           {
-            respostaId: parseInt(data.id)
+            respostaId: parseInt(data.id),
+            tipo_parceria: this.getTipoParceria()
           }
         );
 
-        console.log(patch.data);
+        this.$router.push({ name: 'turma-finaliza' });
       } catch (error) {}
     }
   }
