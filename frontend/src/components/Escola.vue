@@ -1,14 +1,22 @@
 <template>
-  <div id="tela-escola">
+  <div id="escola" class="container">
+    <div id="header">
+      <div id="button-top" class="voltar">
+        <a @click="voltar" v-if="passo !== 1">← Voltar</a>
+      </div>
+      <div id="breadcrumb">
+        <p>/contato profissional</p>
+      </div>
+    </div>
     <div id="passo-1" v-if="passo === 1">
-      <h1>Qual é a marca da sua instituição de ensino?</h1>
-      <div class="campos">
-        <input v-model="marca" type="text" placeholder="Nome">
+      <h1 class="form-label">Qual é o nome da sua escola de idiomas?</h1>
+      <div class="campos input-field">
+        <input v-model="marca" type="text" placeholder="Digite o nome da sua escola" class="input-text">
       </div>
     </div>
 
     <div id="passo-2" v-if="passo === 2">
-      <h1>Por favor, digite o endereço da sua escola</h1>
+      <h1 class="form-label">Por favor, digite o endereço da sua escola</h1>
       <div class="campos">
         <input v-model="cidade" type="text" placeholder="Cidade" @blur="validarCidade">
         <input v-model="endereco" type="text" placeholder="Endereço">
@@ -16,26 +24,26 @@
     </div>
 
     <div id="passo-3" v-if="passo === 3">
-      <h1>Só falta agora o telefone da unidade</h1>
+      <h1 class="form-label">Só falta agora o telefone da unidade</h1>
       <div class="campos">
         <input
+          id="input-telefone"
+          class="input-tooltip"
           v-model="telefone"
           type="text"
           placeholder="(12) 9999-9999"
           v-bind:class="{invalido: telefoneInvalido}"
           @keyup="validaTelefone"
         >
+        <b-tooltip show target="input-telefone" title="DICA: Este é o telefone divulgado aos alunos"></b-tooltip>
       </div>
     </div>
-
     <div class="buttons">
       <div class="proximo">
-        <button @click="proximo">Próximo</button>
-      </div>
-      <div class="voltar">
-        <button @click="voltar">Voltar</button>
+        <button @click="proximo" class="button-cta button-next">Próximo</button>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -44,6 +52,7 @@ import ApiService from '../services/api.service';
 import { SET_ESCOLA } from '../store/actions.type';
 
 export default {
+
   name: 'Escola',
   data() {
     return {
@@ -115,6 +124,7 @@ export default {
     }
   }
 };
+
 </script>
 
 <style lang="css" scoped>

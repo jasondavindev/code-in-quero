@@ -63,14 +63,51 @@ body {
   font-size:1.2em;
 }
 
-.logo {
-  font-family:'Geomanist-Black';
+.container {
+  padding-right: 40px;
+  padding-left: 40px;
+  width:100%;
 }
 
-h1 {
-  font-family: 'WorkSans-ExtraBold';
-  font-size: 1.8em;
-  font-weight: bold;
+.logo {
+  font-family:'Geomanist-Black';
+  font-size:2em;
+  text-align:center;
+}
+
+.text-highlight {
+  border-bottom: solid 10px #FF8878;
+  height: 40px;
+  display: inline-block;
+}
+
+h1.form-label {
+  margin:0 0 80px 0 !important;
+}
+
+#button-top {
+  text-align: left;
+  color: #FF8878;
+  background:none;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+input[type=text]:not(.browser-default).input-text {
+  border-bottom: 1px solid #7273ff;
+}
+
+::placeholder {
+  color: #7273FF;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color:#7273FF;
+}
+
+::-ms-input-placeholder {
+  color: #7273FF;
 }
 
 .button-cta {
@@ -81,12 +118,191 @@ h1 {
   color: #FFF !important;
   border-radius:40px;
   border:none;
-  padding: 25px;
+  padding: 20px;
   font-family: 'WorkSans-Medium';
 }
 
+.button-next {
+  background-color: #ffffff !important;
+  border: solid 1px #7273FF !important;
+  color: #7273FF !important;
+}
+
+.tooltip-inner {
+  background-color: #22b573;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.arrow::before,
+.arrow::before {
+  border-top-color: #22b573 !important;
+}
+
+/* THE ARROW */
+
+ul.the-arrow-container {
+  text-align:left;
+  margin:20px 0 0 0;
+  color: #FFF;
+}
+
+ul.the-arrow-container li {
+  margin: 0 0 24px;
+}
+
+.the-arrow {
+  width: 124px;
+  transition: all 0.2s;
+}
+.the-arrow.-left {
+  position: absolute;
+  top: 60%;
+  left: 0;
+}
+.the-arrow.-left > .shaft {
+  width: 0;
+  background-color: #FFF;
+}
+.the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
+  width: 0;
+  background-color: #FFF;
+}
+.the-arrow.-left > .shaft:before {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.the-arrow.-left > .shaft:after {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.the-arrow.-right {
+  top: 3px;
+}
+.the-arrow.-right > .shaft {
+  width:124px;
+  transition-delay: 0.2s;
+}
+.the-arrow.-right > .shaft:before, .the-arrow.-right > .shaft:after {
+  width: 8px;
+  transition-delay: 0.3s;
+  transition: all 0.5s;
+}
+.the-arrow.-right > .shaft:before {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+.the-arrow.-right > .shaft:after {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+.the-arrow > .shaft {
+  background-color: #FFF;
+  display: block;
+  height: 1px;
+  position: relative;
+  transition: all 0.2s;
+  transition-delay: 0;
+  will-change: transform;
+}
+.the-arrow > .shaft:before, .the-arrow > .shaft:after {
+  background-color: #FFF;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.2s;
+  transition-delay: 0;
+}
+.the-arrow > .shaft:before {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+.the-arrow > .shaft:after {
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.animated-arrow {
+  display: inline-block;
+  color: #FFF;
+  font-size: 1.25em;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+}
+.animated-arrow:hover {
+  color: #eaeaea;
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft {
+  width: 64px;
+  transition-delay: 0.1s;
+  background-color: #eaeaea;
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft:before, .animated-arrow:hover > .the-arrow.-left > .shaft:after {
+  width: 8px;
+  transition-delay: 0.1s;
+  background-color: #eaeaea;
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft:before {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft:after {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+.animated-arrow:hover > .main {
+  -webkit-transform: translateX(80px);
+          transform: translateX(80px);
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft {
+  width: 0;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  transition-delay: 0;
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:before, .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+  width: 0;
+  transition-delay: 0;
+  transition: all 0.1s;
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:before {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.animated-arrow > .main {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+.animated-arrow > .main > .text {
+  margin: 0 16px 0 0;
+  line-height: 1;
+}
+.animated-arrow > .main > .the-arrow {
+  position: relative;
+}
+
+
 #app {
   text-align: center;
+}
+
+#app h1 {
+  font-family: 'WorkSans-ExtraBold';
+  font-size: 1.9em;
+  font-weight: bold;
+  margin: 0rem 0rem 0rem 0rem;
+  font-size: 2.2rem;
+  text-align: left;
+  line-height: 1.5em;
 }
 
 /* Splash Screen */
@@ -106,6 +322,8 @@ h1 {
   #logo-container .logo {
     width: 100%;
     display: block;
+    text-align: center;
+    font-size: 3em;
   }
 
 #powered-by {
@@ -124,7 +342,7 @@ h1 {
   }
 
 /* Inicio Screen */
-.#inicio {
+#inicio {
 
 }
 
@@ -133,7 +351,12 @@ h1 {
   }
 
   #inicio h1 {
-    font-size: 3em;
+    text-align: center;
+    font-family: 'Geomanist-Black';
+    font-size: 2.2em;
+    padding: 0 20px;
+    margin-top: 20px;
+    line-height: 1.2em;
   }
 
   #inicio p {
@@ -142,4 +365,45 @@ h1 {
 
   #inicio .btn-large {
     margin-top: 40px;
+  }
+
+/* Escola Pre */
+#escola-pre {
+  color: #ffffff;
+  background-color:#7273ff;
+  height: 100vh;
+  width: 100%;
+}
+
+  #escola-pre h1 {
+    padding-top: 80px;
+    padding-right:70px;
+  }
+
+/* Escola */
+#escola {
+
+}
+
+  #escola #header {
+    margin-top:20px;
+  }
+
+  #escola #breadcrumb {
+    margin-top: 20px;
+    font-size:1.1em;
+    font-family:'WorkSans-Medium';
+    color: #7273FF;
+    text-align: left;
+  }
+
+  #escola #button-top {
+    height: 20px
+  }
+
+  #escola #footer {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
   }
