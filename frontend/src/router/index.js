@@ -23,12 +23,17 @@ export default new Router({
 		{
 			path: '/turmas',
 			name: 'turmas',
-			component: () => import('../components/Tela3.vue'),
+			component: () => import('../components/Turma.vue'),
 		},
 		{
 			path: '/parceiro',
 			name: 'parceiro',
 			component: () => import('../components/Parceiro.vue'),
+		},
+		{
+			path: '/turmas',
+			name: 'turma',
+			component: () => import('../components/Turma.vue'),
 		},
 	],
 });
