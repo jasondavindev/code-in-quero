@@ -9,7 +9,12 @@ export default new Router({
 			path: '/',
 			name: 'home',
 			component: () => import('../components/Tela1.vue'),
-		},
+    },
+    {
+      path: '/escola',
+      name: 'escola',
+      component: () => import('../components/Escola')
+    },
 		{
 			path: '/turmas',
 			name: 'turmas',
