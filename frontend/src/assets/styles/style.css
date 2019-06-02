@@ -66,6 +66,7 @@ body {
 .container {
   padding-right: 40px;
   padding-left: 40px;
+  width:100%;
 }
 
 .logo {
@@ -80,6 +81,35 @@ body {
   display: inline-block;
 }
 
+h1.form-label {
+  margin:0 0 80px 0 !important;
+}
+
+#button-top {
+  text-align: left;
+  color: #FF8878;
+  background:none;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+input[type=text]:not(.browser-default).input-text {
+  border-bottom: 1px solid #7273ff;
+}
+
+::placeholder {
+  color: #7273FF;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color:#7273FF;
+}
+
+::-ms-input-placeholder {
+  color: #7273FF;
+}
+
 .button-cta {
   display: block;
   margin: 40px auto;
@@ -88,9 +118,28 @@ body {
   color: #FFF !important;
   border-radius:40px;
   border:none;
-  padding: 25px;
+  padding: 20px;
   font-family: 'WorkSans-Medium';
 }
+
+.button-next {
+  background-color: #ffffff !important;
+  border: solid 1px #7273FF !important;
+  color: #7273FF !important;
+}
+
+.tooltip-inner {
+  background-color: #22b573;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.arrow::before,
+.arrow::before {
+  border-top-color: #22b573 !important;
+}
+
+/* THE ARROW */
 
 ul.the-arrow-container {
   text-align:left;
@@ -331,3 +380,30 @@ ul.the-arrow-container li {
     padding-right:70px;
   }
 
+/* Escola */
+#escola {
+
+}
+
+  #escola #header {
+    margin-top:20px;
+  }
+
+  #escola #breadcrumb {
+    margin-top: 20px;
+    font-size:1.1em;
+    font-family:'WorkSans-Medium';
+    color: #7273FF;
+    text-align: left;
+  }
+
+  #escola #button-top {
+    height: 20px
+  }
+
+  #escola #footer {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+  }
