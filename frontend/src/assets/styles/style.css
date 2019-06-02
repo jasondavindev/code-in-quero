@@ -110,6 +110,33 @@ input[type=text]:not(.browser-default).input-text {
   color: #7273FF;
 }
 
+.select {
+  border: solid 1px #7273FF;
+  margin-bottom: 20px;
+}
+
+.option {
+  background-color:#7273FF;
+  color: #FFF !important;
+  border-radius:40px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+  .option label {
+    color: #ffffff;
+    font-family: 'WorkSans-Medium';
+    font-size:1em;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 1.5em;
+  }
+
+  .option-selected {
+    background-color:#FF8878;
+  }
+
 .button-cta {
   display: block;
   margin: 40px auto;
@@ -134,10 +161,29 @@ input[type=text]:not(.browser-default).input-text {
   padding: 10px;
 }
 
-.arrow::before,
-.arrow::before {
-  border-top-color: #22b573 !important;
+  .arrow::before,
+  .arrow::before {
+    border-top-color: #22b573 !important;
+  }
+
+#footer {
+  width: 100%;
+  bottom: 0;
+  left:0;
+  position: fixed;
 }
+
+  .button-footer {
+    width: 100%;
+    height: 100px;
+    display: block;
+    border:none;
+    background-color: #7273FF;
+    color: #ffffff;
+    text-transform:uppercase;
+    font-size:1em;
+    padding: 0 15%;
+  }
 
 /* THE ARROW */
 
@@ -436,3 +482,42 @@ ul.the-arrow-container li {
     width: 100%;
     text-align: center;
   }
+
+/* Turma Pre */
+#turma-pre {
+  color: #ffffff;
+  background-color:#7273ff;
+  height: 100vh;
+  width: 100%;
+}
+
+  #turma-pre h1 {
+    padding-top: 80px;
+    padding-right:70px;
+  }
+
+  /* Turma */
+  #turma {
+
+  }
+  
+    #turma #header {
+      margin-top:20px;
+    }
+  
+    #turma #breadcrumb {
+      margin-top: 20px;
+      font-size:1.1em;
+      font-family:'WorkSans-Medium';
+      color: #7273FF;
+      text-align: left;
+    }
+  
+    #turma #button-top {
+      height: 20px
+    }
+
+    #turma #passo-3 .option {
+      border-radius: 45px;
+      margin-bottom:10px;
+    }
