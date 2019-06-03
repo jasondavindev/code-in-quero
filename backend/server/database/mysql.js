@@ -6,6 +6,7 @@ module.exports = function(app) {
 	return {
 		migrateAll() {
 			db.automigrate();
+			console.log('migrate');
 		},
 
 		query(stmt, callback) {
