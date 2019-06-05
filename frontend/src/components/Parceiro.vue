@@ -20,6 +20,7 @@
           placeholder="Digite o seu melhor e-mail"
           v-bind:class="{invalido: emailInvalido}"
           @keyup="validaEmail"
+          @blur="validaEmail"
         >
       </div>
     </div>
@@ -67,8 +68,8 @@ export default {
       nome: '',
       telefone: '',
 
-      telefoneInvalido: true,
-      emailInvalido: true
+      telefoneInvalido: false,
+      emailInvalido: false
     };
   },
 
@@ -86,11 +87,17 @@ export default {
     proximo() {
       this.passo === 3 && this.enviar();
 
-      if (this.emailInvalido === true && this.passo === 1) return;
+      if ((this.emailInvalido === true || !this.email) && this.passo === 1) {
+        this.emailInvalido = true;
+        return;
+      }
 
-      if (!this.nome && this.passo === 2) return;
+      if ((!this.nome || !this.nome) && this.passo === 2) return;
 
-      if (this.telefoneInvalido && this.passo === 3) return;
+      if ((this.telefoneInvalido || !this.telefone) && this.passo === 3) {
+        this.telefoneInvalido = true;
+        return;
+      }
 
       this.validaPasso(1) && ++this.passo;
     },
@@ -141,11 +148,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.invalido {
-  background: #f00;
-}
-
-.valido {
-  background-color: #00f;
-}
 </style>

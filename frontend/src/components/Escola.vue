@@ -16,6 +16,8 @@
           type="text"
           placeholder="Digite o nome da sua escola"
           class="input-text"
+          v-bind:class="{invalido: marcaInvalida}"
+          @blur="validarMarca"
         >
       </div>
     </div>
@@ -23,8 +25,20 @@
     <div id="passo-2" v-if="passo === 2">
       <h1 class="form-label">Por favor, digite o endereço da sua escola</h1>
       <div class="campos">
-        <input v-model="cidade" type="text" placeholder="Cidade" @blur="validarCidade">
-        <input v-model="endereco" type="text" placeholder="Endereço">
+        <input
+          v-model="cidade"
+          type="text"
+          placeholder="Cidade"
+          v-bind:class="{invalido: cidadeInvalida}"
+          @blur="validarCidade"
+        >
+        <input
+          v-model="endereco"
+          type="text"
+          placeholder="Endereço"
+          v-bind:class="{invalido: enderecoInvalido}"
+          @blur="validarEndereco"
+        >
       </div>
     </div>
 
@@ -37,10 +51,11 @@
           v-model="telefone"
           type="text"
           placeholder="(12) 9999-9999"
+          v-bind:class="{invalido: telefoneInvalido}"
           @keyup="validaTelefone"
+          @blur="validaTelefone"
         >
         <b-tooltip
-          show
           target="input-telefone"
           title="DICA: Este é o telefone divulgado aos alunos"
         ></b-tooltip>
@@ -70,9 +85,10 @@ export default {
       endereco: '',
       telefone: '',
 
-      telefoneInvalido: true,
-      cidadeInvalida: true,
-      enderecoInvalido: true
+      marcaInvalida: false,
+      telefoneInvalido: false,
+      cidadeInvalida: false,
+      enderecoInvalido: false
     };
   },
 
@@ -88,19 +104,50 @@ export default {
     },
 
     proximo() {
-      this.passo === 3 && this.enviar();
+      if ((this.passo === 1 || !this.marca) && !this.marca) {
+        this.marcaInvalida = true;
+        return;
+      }
 
-      if (this.passo === 1 && !this.marca) return;
-      if (this.passo === 2 && (!this.cidade || !this.endereco)) return;
+      if (this.passo === 2 && (!this.cidade || !this.endereco)) {
+        if (!this.cidade) this.cidadeInvalida = true;
+        if (!this.endereco) this.enderecoInvalido = true;
+        return;
+      }
+
+      if (this.passo === 3 && !this.telefone) {
+        this.telefoneInvalido = true;
+        return;
+      }
+
+      this.passo === 3 && this.enviar();
 
       this.validaPasso(1) && ++this.passo;
     },
 
-    validarMarca() {},
+    validarMarca() {
+      if (!this.marca) {
+        this.marcaInvalida = true;
+      } else {
+        this.marcaInvalida = false;
+      }
+    },
 
-    validarCidade() {},
+    validarCidade() {
+      if (!this.cidade) {
+        this.cidadeInvalida = true;
+      } else {
+        this.cidadeInvalida = false;
+      }
+    },
 
-    validarEndereco() {},
+    validarEndereco() {
+      if (!this.endereco) {
+        this.enderecoInvalido = true;
+      } else {
+        this.enderecoInvalido = false;
+      }
+    },
 
     validarTelefone() {
       return /(^\d{2})(\d{4,5})(\d{4})$/gi.test(
@@ -141,11 +188,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.invalido {
-  background: #f00;
-}
-
-.valido {
-  background-color: #00f;
-}
 </style>

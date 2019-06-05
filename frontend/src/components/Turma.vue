@@ -206,6 +206,8 @@
             name="mensalidade"
             v-model="mensalidade"
             placeholder="Insira o valor em R$"
+            v-bind:class="{invalido: mensalidadeInvalida}"
+            @blur="validaMensalidade"
           >
         </div>
       </div>
@@ -268,7 +270,8 @@ export default {
 
       mediaPraca: 0,
       alcancar: 20,
-      ideal: 80
+      ideal: 80,
+      mensalidadeInvalida: false
     };
   },
 
@@ -312,6 +315,7 @@ export default {
 
     proximo() {
       if (!this.antesProximo()) return;
+      if (!this.validaMensalidade()) return;
       this.passo === this.numero_passos && this.adicionarCurso();
 
       this.validaPasso(1) && ++this.passo;
@@ -348,11 +352,17 @@ export default {
 
       this.resetarValores();
       this.$router.push({ name: 'preview-unico' });
-      // if (this.$store.getters.cursos.length === 1) {
-      // 	this.$router.push({ name: 'turma-pos-1' });
-      // } else {
-      // 	this.$router.push({ name: 'turma-pos-2' });
-      // }
+    },
+
+    validaMensalidade() {
+      if (this.passo === 5 && (!this.mensalidade || this.mensalidade < 1)) {
+        this.mensalidadeInvalida = true;
+        return false;
+      } else {
+        this.mensalidadeInvalida = false;
+      }
+
+      return true;
     }
   },
 

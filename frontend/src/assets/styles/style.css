@@ -800,3 +800,9 @@ div[role='tooltip'] {
   font-weight: bold;
   color: #000;
 }
+
+.invalido {
+  border-bottom: 1px solid #ff4a4a!important;
+  -webkit-box-shadow: 0 1px 0 0 #ff4a4a!important;
+  box-shadow: 0 1px 0 0 #ff4a4a!important;
+}
