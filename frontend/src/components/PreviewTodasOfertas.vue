@@ -12,7 +12,7 @@
         :desconto="curso.desconto"
         :mensalidade="curso.mensalidade"
         :nome="curso.range_idade"
-				idioma="Inglês"
+        idioma="Inglês"
       ></CardPreview>
     </div>
     <div class="buttons">
@@ -23,6 +23,7 @@
 
 <script>
 import CardPreview from './CardPreview';
+import Storage from '../services/storage.service.js';
 
 export default {
   components: {
@@ -36,7 +37,10 @@ export default {
   },
 
   mounted() {
-		this.cursos = this.$store.getters.cursos;
+    this.cursos = this.$store.getters.cursos;
+    Storage.delete('parceiro');
+    Storage.delete('escola');
+    Storage.delete('resposta');
   }
 };
 </script>

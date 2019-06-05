@@ -25,7 +25,10 @@
           <p>Estou ciente que cobrando mais de 11 parcelas gero uma barreira de compra para o aluno. O mesmo terá que pagar no mesmo mês mensalidade e pré-matrícula.</p>
 
           <div class="buttons">
-            <button @click="alterarIsencoes" class="button-cta button-cta-underline">Alterar mesmo assim</button>
+            <button
+              @click="alterarIsencoes"
+              class="button-cta button-cta-underline"
+            >Alterar mesmo assim</button>
           </div>
         </div>
 
@@ -34,14 +37,25 @@
           <div class="campos">
             <p>
               <label>
-                <input id="isencao-matricula" type="checkbox" v-model="isentarMatricula" class="filled-in" checked="checked">
+                <input
+                  id="isencao-matricula"
+                  type="checkbox"
+                  v-model="isentarMatricula"
+                  class="filled-in"
+                  checked="checked"
+                >
                 <span>Quero isentar a matrícula</span>
               </label>
             </p>
             <p>
               <label>
-
-                <input id="isencao-mensalidade" type="checkbox" v-model="isentarMensalidade" class="filled-in" checked="checked">
+                <input
+                  id="isencao-mensalidade"
+                  type="checkbox"
+                  v-model="isentarMensalidade"
+                  class="filled-in"
+                  checked="checked"
+                >
                 <span>Quero isentar a primeira mensalidade</span>
               </label>
             </p>
@@ -93,18 +107,19 @@ export default {
       if (this.enviou) return;
 
       try {
-        const { data } = await ApiService.post('/respostas', {
-          status: 'finalizado',
-          string: ''
-        });
-
         this.enviou = true;
 
-        const patch = await ApiService.patch(
+        const resultParceiro = await ApiService.patch(
           `/parceiros/${Storage.get('parceiro')}`,
           {
-            respostaId: parseInt(data.id),
             tipo_parceria: this.getTipoParceria()
+          }
+        );
+
+        const resultResposta = await ApiService.patch(
+          `/respostas/${Storage.get('resposta')}`,
+          {
+            status: 'finalizado'
           }
         );
 

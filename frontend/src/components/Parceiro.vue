@@ -55,7 +55,7 @@
 
 <script>
 import ApiService from '../services/api.service';
-import { SET_ESCOLA, SET_PARCEIRO } from '../store/actions.type';
+import { SET_ESCOLA, SET_PARCEIRO, SET_RESPOSTA } from '../store/actions.type';
 
 export default {
   name: 'Escola',
@@ -132,13 +132,19 @@ export default {
       if (this.emailInvalido || this.telefoneInvalido) return;
 
       try {
+        const { data } = await ApiService.post('/respostas', {
+          status: 'pendente'
+        });
+
         const result = await ApiService.post('/parceiros', {
           nome: this.nome,
           email: this.email,
           telefone: this.telefone,
-          tipo_parceria: 'qbmais'
+          tipo_parceria: 'qbmais',
+          respostaId: data.id
         });
 
+        this.$store.dispatch(SET_RESPOSTA, data.id);
         this.$store.dispatch(SET_PARCEIRO, result.data.id);
         this.$router.push({ name: 'escola-pre' });
       } catch (error) {}
