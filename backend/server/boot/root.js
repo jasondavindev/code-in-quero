@@ -7,6 +7,11 @@
 
 module.exports = function(server) {
   server.database = require('../database/mysql')(server);
+
+  if (process.env.MIGRATE) {
+    server.database.migrateAll();
+  }
+
   // Install a `/` route that returns server status
   var router = server.loopback.Router();
   router.get('/', server.loopback.status());

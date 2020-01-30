@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+  backend:
+    container_name: selfdesk_api
+    image: node:10.16.0
+    working_dir: /home/node/app
+    command: bash -c "yarn watch"
+    volumes:
+      - ${PWD}/backend:/home/node/app
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+    depends_on:
+      - db
+  
+  frontend:
+    container_name: selfdesk_web
+    image: node:10.16.0
+    working_dir: /home/node/app
+    command: bash -c "yarn watch"
+    volumes:
+      - ${PWD}/frontend:/home/node/app
+    ports:
+      - 8080:8080
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+  db:
+    container_name: selfdesk_db
+    image: mysql:5.7
+    volumes:
+      - ${PWD}/docker/volumes/mysql:/var/lib/mysql
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: selfdesk
+      MYSQL_USER: app
+      MYSQL_PASSWORD: secret
+
+networks:
+  app-network:
+    driver: bridge

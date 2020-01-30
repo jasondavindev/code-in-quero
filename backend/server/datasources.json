@@ -2,7 +2,7 @@
   "Mysql": {
     "host": "localhost",
     "port": 5000,
-    "url": "mysql://root:teste@localhost:5000/application",
+    "url": "mysql://app:secret@db:3306/selfdesk",
     "database": "application",
     "password": "teste",
     "name": "Mysql",

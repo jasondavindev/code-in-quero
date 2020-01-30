@@ -13,3 +13,17 @@
 - Processo de cadastro simples e gamificado. Oferece experiência fluida e simples
 
 ![](https://lh4.googleusercontent.com/PRuKFQ0jXAOtZXeQl6QSoZYSj3r2DgbiCC6q3H_IPx9MJ3YbuhMCjQID4zr0kHR0v4YZUJykh0mWpkhlBxSpd8VnA92rrjNpb83PWMz8DwkWbVEhjFBGNX_YzT3QKe7n9ZwOMC1Irko "App SelfDesk")
+
+## Executando a aplicação (com Docker)
+### Requisitos
+- Docker >= 19.03.5
+- Docker Compose >= 1.23.1
+
+```bash
+source dev.sh
+installpkg # instalar dependencias do projeto
+dkup # subir os containers docker
+dkdown # matar os containers docker
+```
+
+Quando os containers estiverem no ar, acesse http://localhost:8080
